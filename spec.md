@@ -27,7 +27,7 @@ Encoded the same as [sqlite varints](https://sqlite.org/src4/doc/trunk/www/varin
 
 ## Complex types
 
-There are three complex types which can be used to construct compound types
+There are three constructs that can be used to form compound types
 from existing ones.
 
 ### `tuple t0 t1... tn end`
@@ -47,7 +47,7 @@ An array type is written as the word `array` followed by a single type.
 Encoded as a `uv` denoting the number of `t`s that follow.
 
 ## Bindings
-Types can be bound to names so that they can be reused in several places.
+Types can be bound to names to facilitate reuse.
 
 ### `let name a0 a1... an be t`
 An abstraction that binds `name` to a new type that when given
@@ -61,7 +61,7 @@ A schema consists of a series of **words** which are space delimited sequences
 of these characters:
 `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890._-<>?!`
 
-Note that **words** are case sensitive.
+**Words** are case sensitive.
 
 All **words** following a `;` character are ignored until a newline.
 
@@ -118,7 +118,7 @@ let 3 x be
   tuple x x x end
 
 ; These bindings of numbers to tuples continue in the obvious
-; manner, however since it would become a bit boring the prelude
+; manner, however due to physical constraints the prelude
 ; is not reproduced here in it's entirety.
 ```
 
