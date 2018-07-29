@@ -48,10 +48,13 @@ See the [specification](/spec.md) for more detail.
 
 ## Implementations
 
+- [Pony](https://github.com/ii8/pony-bale)
+- [Lua](https://github.com/ii8/lbale)
+
+### Tooling
+
 The [baler](https://github.com/ii8/baler) program can validate schemas and
 decode/encode data to and from a diagnostic notation.
-
-- [Pony](https://github.com/ii8/pony-bale)
 
 ## Differences from XDR
 
