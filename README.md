@@ -41,7 +41,7 @@ See the [specification](/spec.md) for more detail.
 | `void`      |          |           |
 | `bool`      | false    | `00`      |
 | `bool`      | true     | `01`      |
-| `maybe u16` | just 12  | `01 0c`   |
+| `maybe u16` | just 12  | `01 00 0c`|
 | `maybe i8`  | nothing  | `00`      |
 | `2 u8`      | 3, 4     | `03 04`   |
 | `uv`        | 2200     | `f8 a8`   |
@@ -55,6 +55,12 @@ See the [specification](/spec.md) for more detail.
 
 The [baler](https://github.com/ii8/baler) program can validate schemas and
 decode/encode data to and from a diagnostic notation.
+
+## What does bale not do
+
+- Versioning of schemas
+- Random access
+- Self description of data
 
 ## Differences from XDR
 
