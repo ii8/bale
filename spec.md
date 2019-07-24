@@ -27,23 +27,26 @@ Encoded the same as [sqlite varints](https://sqlite.org/src4/doc/trunk/www/varin
 
 ## Complex types
 
-There are three constructs that can be used to form compound types
+There are three keywords that can be used to form compound types
 from existing ones.
 
 ### `tuple t0 t1... tn end`
 A tuple type is written as a sequence of zero or more types enclosed within the
 words `tuple` and `end`.
+
 This type is encoded as the sequence of types `t0`... `tn` in order.
 
 ### `union t0 t1... tn end`
-Written the same as a `tuple` except the keyword `union` is used at the start
-instead.
+A union type is written as a sequence of zero or more types enclosed within the
+words `union` and `end`
+
 Encoded as a `uv` followed by one of `t0`... `tn`.
 The value of the preceding `uv` is an index(0-based) into `t0`... `tn` denoting
-which of these types follows.
+which one of these types follows.
 
 ### `array t`
 An array type is written as the word `array` followed by a single type.
+
 Encoded as a `uv` denoting the number of `t`s that follow.
 
 ## Bindings
@@ -63,7 +66,7 @@ of these characters:
 
 **Words** are case sensitive.
 
-All **words** following a `;` character are ignored until a newline.
+All characters following a `;` character are ignored until a newline.
 
 **Words** followed directly by a `:` are also ignored, but only when
 preceding a type within a `tuple` or `union`; this restriction may be
